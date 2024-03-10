@@ -1,0 +1,434 @@
+<schemalist gettext-domain="planner">
+  <schema id="org.gnome.Planner" path="/org/gnome/planner/">
+    <key name="last-dir" type="s">
+      <default>''</default>
+    </key>
+    <child name="views" schema="org.gnome.Planner.views"/>
+    <child name="ui" schema="org.gnome.Planner.ui"/>
+    <child name="plugins" schema="org.gnome.Planner.plugins"/>
+  </schema>
+  <schema id="org.gnome.Planner.views" path="/org/gnome/planner/views/">
+    <child name="gantt-view" schema="org.gnome.Planner.views.gantt-view"/>
+    <child name="task-view" schema="org.gnome.Planner.views.task-view"/>
+    <child name="resource-view" schema="org.gnome.Planner.views.resource-view"/>
+    <child name="resource-usage-view" schema="org.gnome.Planner.views.resource-usage-view"/>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view" path="/org/gnome/planner/views/gantt-view/">
+    <key name="highlight-critical-path" type="b">
+      <default>false</default>
+      <summary>Highlight critical path in Gantt view</summary>
+      <description>Whether to highlight the tasks along the cricital path in the Gantt view.</description>
+    </key>
+    <key name="display-nonstandard-days" type="b">
+      <default>false</default>
+      <summary>Display nonstandard days in Gantt view</summary>
+      <description>Whether to display nonstandard days in the Gantt view.</description>
+    </key>
+    <key name="print-enabled" type="b">
+      <default>true</default>
+      <summary>Print the Gantt view</summary>
+      <description>Whether printing of the Gantt view is enabled.</description>
+    </key>
+    <key name="show-guidelines" type="b">
+      <default>false</default>
+    </key>
+    <child name="assigned-to" schema="org.gnome.Planner.views.gantt-view.assigned-to"/>
+    <child name="complete" schema="org.gnome.Planner.views.gantt-view.complete"/>
+    <child name="cost" schema="org.gnome.Planner.views.gantt-view.cost"/>
+    <child name="duration" schema="org.gnome.Planner.views.gantt-view.duration"/>
+    <child name="finish" schema="org.gnome.Planner.views.gantt-view.finish"/>
+    <child name="name" schema="org.gnome.Planner.views.gantt-view.name"/>
+    <child name="slack" schema="org.gnome.Planner.views.gantt-view.slack"/>
+    <child name="start" schema="org.gnome.Planner.views.gantt-view.start"/>
+    <child name="wbs" schema="org.gnome.Planner.views.gantt-view.wbs"/>
+    <child name="work" schema="org.gnome.Planner.views.gantt-view.work"/>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.assigned-to" path="/org/gnome/planner/views/gantt-view/assigned-to/">
+    <key name="order" type="i">
+      <default>8</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.complete" path="/org/gnome/planner/views/gantt-view/complete/">
+    <key name="order" type="i">
+      <default>9</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.cost" path="/org/gnome/planner/views/gantt-view/cost/">
+    <key name="order" type="i">
+      <default>7</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.duration" path="/org/gnome/planner/views/gantt-view/duration/">
+    <key name="order" type="i">
+      <default>5</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.finish" path="/org/gnome/planner/views/gantt-view/finish/">
+    <key name="order" type="i">
+      <default>3</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.name" path="/org/gnome/planner/views/gantt-view/name/">
+    <key name="order" type="i">
+      <default>1</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.slack" path="/org/gnome/planner/views/gantt-view/slack/">
+    <key name="order" type="i">
+      <default>6</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.start" path="/org/gnome/planner/views/gantt-view/start/">
+    <key name="order" type="i">
+      <default>2</default>
+    </key>
+    <key name="visible" type="b">
+      <default>false</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.wbs" path="/org/gnome/planner/views/gantt-view/wbs/">
+    <key name="order" type="i">
+      <default>0</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.gantt-view.work" path="/org/gnome/planner/views/gantt-view/work/">
+    <key name="order" type="i">
+      <default>4</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view" path="/org/gnome/planner/views/task-view/">
+    <key name="highlight-critical-path" type="b">
+      <default>false</default>
+      <summary>Highlight critical path in Task view</summary>
+      <description>Whether to highlight the tasks along the cricital path in the Task view.</description>
+    </key>
+    <key name="display-nonstandard-days" type="b">
+      <default>false</default>
+      <summary>Display nonstandard days in Task view</summary>
+      <description>Whether to display nonstandard days in the Task view.</description>
+    </key>
+    <key name="print-enabled" type="b">
+      <default>true</default>
+      <summary>Print the Task view</summary>
+      <description>Whether printing of the Task view is enabled.</description>
+    </key>
+    <child name="assigned-to" schema="org.gnome.Planner.views.task-view.assigned-to"/>
+    <child name="complete" schema="org.gnome.Planner.views.task-view.complete"/>
+    <child name="cost" schema="org.gnome.Planner.views.task-view.cost"/>
+    <child name="duration" schema="org.gnome.Planner.views.task-view.duration"/>
+    <child name="finish" schema="org.gnome.Planner.views.task-view.finish"/>
+    <child name="name" schema="org.gnome.Planner.views.task-view.name"/>
+    <child name="slack" schema="org.gnome.Planner.views.task-view.slack"/>
+    <child name="start" schema="org.gnome.Planner.views.task-view.start"/>
+    <child name="wbs" schema="org.gnome.Planner.views.task-view.wbs"/>
+    <child name="work" schema="org.gnome.Planner.views.task-view.work"/>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.assigned-to" path="/org/gnome/planner/views/task-view/assigned-to/">
+    <key name="order" type="i">
+      <default>8</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.complete" path="/org/gnome/planner/views/task-view/complete/">
+    <key name="order" type="i">
+      <default>9</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.cost" path="/org/gnome/planner/views/task-view/cost/">
+    <key name="order" type="i">
+      <default>7</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.duration" path="/org/gnome/planner/views/task-view/duration/">
+    <key name="order" type="i">
+      <default>5</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.finish" path="/org/gnome/planner/views/task-view/finish/">
+    <key name="order" type="i">
+      <default>3</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.name" path="/org/gnome/planner/views/task-view/name/">
+    <key name="order" type="i">
+      <default>1</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.slack" path="/org/gnome/planner/views/task-view/slack/">
+    <key name="order" type="i">
+      <default>6</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.start" path="/org/gnome/planner/views/task-view/start/">
+    <key name="order" type="i">
+      <default>2</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.wbs" path="/org/gnome/planner/views/task-view/wbs/">
+    <key name="order" type="i">
+      <default>0</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.task-view.work" path="/org/gnome/planner/views/task-view/work/">
+    <key name="order" type="i">
+      <default>4</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view" path="/org/gnome/planner/views/resource-view/">
+    <key name="print-enabled" type="b">
+      <default>true</default>
+      <summary>Print the Resource view</summary>
+      <description>Whether printing of the Resource view is enabled.</description>
+    </key>
+    <child name="cost" schema="org.gnome.Planner.views.resource-view.cost"/>
+    <child name="email" schema="org.gnome.Planner.views.resource-view.email"/>
+    <child name="group" schema="org.gnome.Planner.views.resource-view.group"/>
+    <child name="name" schema="org.gnome.Planner.views.resource-view.name"/>
+    <child name="short-name" schema="org.gnome.Planner.views.resource-view.short-name"/>
+    <child name="type" schema="org.gnome.Planner.views.resource-view.type"/>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view.cost" path="/org/gnome/planner/views/resource-view/cost/">
+    <key name="order" type="i">
+      <default>5</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view.email" path="/org/gnome/planner/views/resource-view/email/">
+    <key name="order" type="i">
+      <default>4</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view.group" path="/org/gnome/planner/views/resource-view/group/">
+    <key name="order" type="i">
+      <default>3</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view.name" path="/org/gnome/planner/views/resource-view/name/">
+    <key name="order" type="i">
+      <default>0</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view.short-name" path="/org/gnome/planner/views/resource-view/short-name/">
+    <key name="order" type="i">
+      <default>1</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-view.type" path="/org/gnome/planner/views/resource-view/type/">
+    <key name="order" type="i">
+      <default>2</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-usage-view" path="/org/gnome/planner/views/resource-usage-view/">
+    <child name="resource-name" schema="org.gnome.Planner.views.resource-usage-view.resource-name"/>
+    <child name="task-name" schema="org.gnome.Planner.views.resource-usage-view.task-name"/>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-usage-view.resource-name" path="/org/gnome/planner/views/resource-usage-view/resource-name/">
+    <key name="order" type="i">
+      <default>0</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.views.resource-usage-view.task-name" path="/org/gnome/planner/views/resource-usage-view/task-name/">
+    <key name="order" type="i">
+      <default>1</default>
+    </key>
+    <key name="visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="width" type="i">
+      <default>0</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.ui" path="/org/gnome/planner/ui/">
+    <key name="active-view" type="s">
+      <default>'gantt_view'</default>
+      <summary>The active view</summary>
+      <description>Which view to display in the user interface.</description>
+    </key>
+    <key name="main-window-height" type="i">
+      <default>550</default>
+    </key>
+    <key name="main-window-maximized" type="b">
+      <default>false</default>
+    </key>
+    <key name="main-window-position-x" type="i">
+      <default>0</default>
+    </key>
+    <key name="main-window-position-y" type="i">
+      <default>0</default>
+    </key>
+    <key name="main-window-width" type="i">
+      <default>800</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.plugins" path="/org/gnome/planner/plugins/">
+    <child name="msp-plugin" schema="org.gnome.Planner.plugins.msp-plugin"/>
+    <child name="xml-export" schema="org.gnome.Planner.plugins.xml-export"/>
+  </schema>
+  <schema id="org.gnome.Planner.plugins.msp-plugin" path="/org/gnome/planner/plugins/msp-plugin/">
+    <key name="last-dir" type="s">
+      <default>''</default>
+    </key>
+  </schema>
+  <schema id="org.gnome.Planner.plugins.xml-export" path="/org/gnome/planner/plugins/xml-export/">
+    <key name="last-dir" type="s">
+      <default>''</default>
+    </key>
+  </schema>
+</schemalist>

@@ -17,13 +17,13 @@ def webSite(str):
 
 if (len(sys.argv) < 2):
     print("Add a link")
-    exit(1)
+    sys.exit(1)
 URL = sys.argv[1]
 try:
     page = requests.get(URL)
 except IOError:
     print("No Internet!")
-    exit(1)
+    sys.exit(1)
 
 soup = BeautifulSoup(page.content, "html.parser")
 webname = webSite(URL)
